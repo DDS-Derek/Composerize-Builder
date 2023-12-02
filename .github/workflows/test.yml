@@ -22,9 +22,10 @@ jobs:
         run: |
             git clone https://github.com/composerize/composerize.git git
             mkdir composerize-website
+            cd composerize-website
             cp -r git/packages/composerize-website/. composerize-website
             npm install yarn@1.19.1 -g --force
             yarn add composerize
             make build
-            cd composerize-website/build/
+            cd build/
             ls -al
