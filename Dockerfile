@@ -1,3 +1,14 @@
-FROM ddsderek/foundations:Alpine3.16.0-nginx1.22
+FROM alpine:3.18
 
-COPY /web /app/web
+ENV TZ=Asia/Shanghai
+
+RUN apk add --no-cache tzdata nginx && \
+    rm -rf /var/cache/apk/* /tmp/*
+
+COPY --chmod=755 ./rootfs /
+
+EXPOSE 80
+
+ENTRYPOINT ["nginx"]
+CMD ["-g", "daemon off;"]
+
