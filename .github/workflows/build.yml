@@ -24,7 +24,7 @@ jobs:
         name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: '12'
+          node-version: '20'
 
       -
         name: Build Web
@@ -33,8 +33,8 @@ jobs:
             mkdir composerize-website
             cp -r git/packages/composerize-website/. composerize-website
             cd composerize-website
-            npm install yarn@1.19.1 -g --force
-            yarn add composerize@1.6.10
+            npm install yarn -g --force
+            yarn add composerize
             make build
             cd build/
             ls -al
