@@ -34,7 +34,7 @@ jobs:
             cp -r git/packages/composerize-website/. composerize-website
             cd composerize-website
             npm install yarn@1.19.1 -g --force
-            yarn add composerize@1.5.0
+            yarn add composerize@1.6.10
             make build
             cd build/
             ls -al
